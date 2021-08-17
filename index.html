@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Repaso de formularios</title>
+</head>
+
+<body>
+    <div class="container">
+        <div></div>
+        <form action="procesar.html" method="post">
+            <h1>Formulario de contacto</h1>
+            <!--No importa si el h1 esta dentro del formulario-->
+            <div class="form-group">
+                <label for="">Nombre completo:</label>
+                <input class="form-control" type="text" name="nombre_completo" id="">
+            </div>
+            <div class="form-group">
+                <label for="">Motivo de contacto:</label>
+                <select class="form-control" name="motivo" id="">
+                    <option value="q">Queja</option>
+                    <option value="r">Reclamo</option>
+                    <option value="s">Sujerencia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Mensaje:</label>
+                <textarea class="form-control" name="mensaje" id="" cols="30" rows="10"></textarea>
+            </div>
+            <button class="btn btn-primary">
+                Enviar mensaje
+            </button>
+            <!--El de arriba envia el formulario solo
+                siendo un botton 
+                
+                antes se usaba el de abajo 
+            <input type="submit" value="Enviar mensaje">-->
+        </form>
+    </div>
+</body>
+
+</html>
