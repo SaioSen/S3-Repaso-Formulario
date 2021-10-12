@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using S3_Repaso_Formulario.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace S3_Repaso_Formulario
 {
@@ -24,6 +26,7 @@ namespace S3_Repaso_Formulario
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<AdopcionContext>(options => options.UseInMemoryDatabase("AdopcionBD"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,15 +12,18 @@ namespace S3_Repaso_Formulario.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AdopcionContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AdopcionContext context)
         {
             _logger = logger;
+            _context= context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var solicitudes = _context.SolicitudesAdopcion.ToList();
+            return View(solicitudes); 
         }
 
         public IActionResult SolicitudAdopcion()
@@ -34,6 +37,8 @@ namespace S3_Repaso_Formulario.Controllers
         {
             if(ModelState.IsValid){
                 //guardar el objeto sa en la BD
+                _context.Add(sa);
+                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(sa);

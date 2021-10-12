@@ -1,12 +1,14 @@
 # Resolución parcial Solicitud Adopción
 # Repaso semana 9
+## Guardar en memoria 
+
 
 En el terminal
 
-dotnet add package Microsoft.EntityFrameworkCore
+1:   dotnet add package Microsoft.EntityFrameworkCore
 
 dotnet add package Microsoft.EntityFrameworkCore.Design
 
-dotnet add package microsoft.entityframeworkcore.inmemory
+2:  dotnet add package microsoft.entityframeworkcore.inmemory
 
 dotnet add package Pomelo.EntityFrameworkCore.MySql 
