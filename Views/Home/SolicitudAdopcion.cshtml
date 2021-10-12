@@ -1,0 +1,30 @@
+@model SolicitudAdopcion
+@{
+    ViewData["Title"] = "Solicitud de Adopción";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+<h1>Formulario de solicitud de adopción</h1>
+
+    <div class="form-group">
+        <label asp-for="NombreCompleto">Nombre Completo</label>
+        <input asp-for="NombreCompleto" class="form-control"></input>
+        <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Direccion"></label>
+        <input asp-for="Direccion" class="form-control"></input>
+    </div>
+    <div class="form-group">
+        <label asp-for="DescripcionEspacio">Descripcion Espacio</label>
+        <input asp-for="DescripcionEspacio" class="form-control"></input>
+    </div>
+
+
+
+    <button class="btn btn-primary">Enviar</button>
+
+</form>

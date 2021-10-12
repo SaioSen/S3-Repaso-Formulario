@@ -23,9 +23,20 @@ namespace S3_Repaso_Formulario.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult SolicitudAdopcion()
         {
             return View();
+        }
+
+        //Redirect
+        [HttpPost]
+        public IActionResult SolicitudAdopcion(SolicitudAdopcion sa)
+        {
+            if(ModelState.IsValid){
+                //guardar el objeto sa en la BD
+                return RedirectToAction("Index");
+            }
+            return View(sa);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
