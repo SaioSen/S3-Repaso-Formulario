@@ -26,7 +26,12 @@ namespace S3_Repaso_Formulario
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<AdopcionContext>(options => options.UseInMemoryDatabase("AdopcionBD"));
+            //services.AddDbContext<AdopcionContext>(options => options.UseMySql("AdopcionBD"));
+
+            //var connectionString = "server=localhost;user=root;password=root;database=adopcion";
+            //var serverVersion = ServerVersion.AutoDetect(connectionString);
+
+            services.AddDbContext<AdopcionContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PostgressConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
