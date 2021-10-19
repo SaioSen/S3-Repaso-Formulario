@@ -14,8 +14,13 @@ namespace S3_Repaso_Formulario.Models
         public string NombreCompleto { get; set; }
         [Required]
         public string Direccion { get; set; }
-        [Required]
         public string DescripcionEspacio { get; set; }
+
+        [Required]
+        public string Celular { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Correo { get; set; }
 
     }
 }
